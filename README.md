@@ -18,7 +18,8 @@
 ### **POJO объект User** - простой Java-объект 
 # Запуск тустов
       Развернуть проект и запустить тесты
- ![image](https://github.com/SkayMaks/project/assets/61145879/799ba248-d599-41e8-9710-27d15697a090)
+ ![image](https://github.com/SkayMaks/project/assets/61145879/e941faa1-c6eb-4ee5-bc53-c87916e3e84f)
+
       
 
 
