@@ -1,27 +1,27 @@
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Test;
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class RestApi {
+public class positiveTesting {
     private final static String URL = "https://petstore.swagger.io/v2";
     private final static String app = "application/json";
     UserData user = new UserData(432, "Testik20023", "Test", "Testovich","test@mail.ru", "123456!", "898889998800",7);
 
     @Test
     public void getUser(){
-    given()
-    .when()
-            .contentType(ContentType.JSON)
-            .get(URL + "/user/Maks")
-    .then()
-            .log().all()
-            .statusCode(200)
-            .body("id",Matchers.equalTo(121));
+        Helper help = new Helper();
+        String username = help.adUsHelp(app,URL);
+        given()
+        .when()
+                .contentType(ContentType.JSON)
+                .get(URL + "/user/"+username)
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("id",Matchers.equalTo(400));
+        help.delUsHelp(username,URL);
 
     }
     @Test
@@ -62,6 +62,5 @@ public class RestApi {
                 .log().all()
                 .statusCode(200);
     }
-
 
 }
